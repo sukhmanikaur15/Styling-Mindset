@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Styling mindset | Ethnic wear</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        .bs {
+            padding: 1rem;
+            font-family: sans-serif;
+            color: #512a09;
+            padding-top: 12rem;
+            font-weight: bold;
+            font-size: large;
+        }
+
+        .bg {
+            background: url("https://i.imgur.com/So9ha4Q.jpg");
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            position: fixed;
+            top: 0px;
+            width: 100vw;
+            z-index: -10;
+        }
+
+        .trends {
+            background-color: transparent;
+            min-height: 75vh;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 2rem;
+            row-gap: 2rem;
+            justify-content: center;
+        }
+
+        .pic {
+            box-sizing: border-box;
+            background-color: #ffffff55;
+            width: 300px;
+            height: 450px;
+            max-width: 90vw;
+            max-height: 60vh;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px black;
+
+        }
+
+        .items {
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        img {
+            height: 80%;
+            width: 100%;
+        }
+
+        .details {
+            padding-left: 0.5rem;
+        }
+
+        .c {
+            color: #512a09;
+        }
+
+        p {
+            color: black;
+            padding-top: 0.5rem;
+            text-align: center;
+        }
+
+        .more {
+            color: #701af0;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-align: right;
+            background-color: pink;
+            margin-left: 92%;
+            padding: 0.5rem;
+            border-radius: 10px;
+        }
+
+        .more a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .des {
+                padding-top: 22rem;
+            }
+
+            .more {
+                margin-left: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="maincontainer">
+
+        <!---------------------------------------------------------upper navigation----------------------------------------------------------------------->
+        <div class="main">
+            <div class="navbar">
+                <div class="logo" id="topico"></div>
+                <div><a href="index.html" class="a1">Styling mindset</a></div>
+                <div class="search">
+                    <form>
+                        <div class="flexrow">
+                            <div class="inputwrapper">
+                                <div><input id="inpf" type="text" placeholder="Search.." name="search"></div>
+                                <div class="btndiv"><a href="#" onclick="searchFun()" class="fa fa-search"></a></div>
+                            </div>
+                            <div class="othericons">
+                                <a href="#" class="fa fa-facebook fb"></a>
+                                <a href="#" class="fa fa-twitter tw"></a>
+                                <a href="#" class="fa fa-whatsapp wh"></a>
+                                <a href="#" onclick="openForm()" class="fa fa-user-circle-o loginbtn"></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------------------upper navigation ends------------------------------------------------------------------->
+
+        <!--------------------------------------------------------------navigation------------------------------------------------------------------------->
+        <div class="nav">
+            <div class="n1 nlink">
+                <a href="index.html" class="box">Home</a>
+            </div>
+            <div class="n2 nlink">
+                <a href="accessories.html" class="box">Accessories</a>
+            </div>
+            <div class="n2 nlink">
+                <a href="footwear.html" class="box">Footwear</a>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn box">Outfits
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content n2 nlink box">
+                    <a href="#">Ethnic wear</a>
+                    <a href="western.html">Western wear</a>
+                </div>
+            </div>
+        </div>
+        <!-----------------------------------------------------------------navidation ends----------------------------------------------------------------->
+
+        <!----------------------------------------------------------------------form----------------------------------------------------------------------->
+        <div class="formwrapper">
+            <div class="aform">
+                <div class="cross" onclick="closeForm()">
+                    <i class="fa fa-times"></i>
+                </div>
+                <div class="ava">
+                </div>
+                <form name="myForm" onsubmit="return validateForm()">
+                    <div class="inp">
+                        <span>First Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="fname" type="text"
+                            name="fname" placeholder="First name">
+                    </div>
+                    <div class="inp">
+                        <span>Last Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="lname" type="text"
+                            name="lname" placeholder="Last name">
+                    </div>
+                    <div class="inp">
+                        <span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+                            id="email" type="text" name="email" placeholder="abc@gmail.com">
+                    </div>
+                    <div class="inp">
+                        <span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox" id="psswrd"
+                            type="password" name="psswrd" placeholder="Enter the password">
+                        <i class="fa fa-eye showpwd peye" id="eye" onclick="myFunction()"></i>
+                    </div>
+                    <div class="inp">
+                        <input
+                            style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: white; font-weight: bold;"
+                            class="textbox" type="submit" name="submit" value="Sign-up">
+                    </div>
+                    <div class="loginlink" onclick="openLoginForm()">
+                        Log In
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!------------------------------------------------------------------login form--------------------------------------------------------------------->
+        <div class="formwrapper loginformwrapper">
+            <div class="aform">
+                <div class="cross" onclick="closeLoginForm()">
+                    <i class="fa fa-times"></i>
+                </div>
+                <div class="ava">
+                </div>
+                <form name="myForm" onsubmit="return validateForm()">
+                    <div class="inp">
+                        <span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+                            id="email" type="text" name="email" placeholder="abc@gmail.com">
+                    </div>
+                    <div class="inp pinp">
+                        <div><span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span></div>
+
+                        <div class="pinpwrapper">
+                            <input class="textbox" id="psswrdlogin" type="password" name="psswrd"
+                                placeholder="Enter the password">
+                            <i class="fa fa-eye showpwd peye" onclick="showPass()"></i>
+                        </div>
+                    </div>
+                    <div class="inp">
+                        <input
+                            style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: black; font-weight: bold;"
+                            class="textbox" type="submit" name="submit" value="Log In">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-----------------------------------------------------------------login form ends----------------------------------------------------------------->
+
+        <!-------------------------------------------------------------------form ends--------------------------------------------------------------------->
+
+        <!--------------------------------------------------------------------content---------------------------------------------------------------------->
+        <div class="bs">
+            <p class="c">Indian culture is followed with their rituals with the simplest way. Indian culture covered all
+                the
+                rituals of all cast-people whose live in India and that's a real Indian culture.<br><br>"Ethnic wear is
+                the
+                part of Indian culture that truly followed by the people."<br><br>Lots of ethnic fashion is available in
+                these days. Many sub-style of ethnic wear is also available like Gujrati ethnic wear, Rajputana-ethnic
+                wears, Punjabi-ethnic wears, Marathi ethnic wear, Islamic-ethnic wear and much more.<br><br>People are
+                the most comfortable when they wear ethnic.</p>
+            <br>
+            <h2>Casual wear</h2>
+            <hr>
+            <br>
+            <div class="trends">
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/oBURwZb.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/BxyyW2Y.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton <a
+                                    href="https://www.amazon.in/Casual-Ethnic-Printed-Dupatta-Pallazo/dp/B08JMLG4WT">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/0Yflkfv.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton <a
+                                    href="https://www.amazon.in/JEEWAN-Casual-Ethnic-Printed-Pallazo/dp/B08M5ZY26P">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/rFeEkcy.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/G0u7brL.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Materail: Cotton <a
+                                    href="https://www.ebay.com/itm/Indian-Fashion-Women-Girls-Kurti-Style-Ethnic-Casual-Dress-Good-Quality-/143039331000">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/sXPJ5aP.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton <a
+                                    href="https://dsfabrics.com/product/alisa-pure-cambric-print-with-embroidery-dress-beautiful-stylish-sharara-suits-fancy-colorful-casual-wear-ethnic-wear-womens-dress-material-for-ladies-party-wear-casual-dresses-for-girls-fancy-cloth/">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/Sm7jvSo.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton <a
+                                    href="https://www.daraz.pk/products/women-stylish-pearl-beads-kurti-pajama-suit-i146548225-s1309410702.html?spm=a2a0e.searchlistcategory.list.4.14106d6ezfqqrH&search=1">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/rb1EdEp.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton <a
+                                    href="https://www.nykaafashion.com/aachho-yellow-organza-handpainted-kurta-with-pant-dupatta-set-of-3/p/593931?adsource=shopping_india&utm_content=ads&utm_source=GooglePaid&utm_medium=PLA&utm_campaign=PLA_SmartShopping-AllBrands&gclid=Cj0KCQiA-aGCBhCwARIsAHDl5x_nDlPXaybcYs4l5GtoDBhKH_ZOpN8kP5oRNnIGZd9lolf9Jp8d6UkaAkVxEALw_wcB">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/sv16p0T.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton <a
+                                    href="https://www.amazon.in/Ukal-Womens-Kaftan-Sleepwear-Viscose/dp/B089GZFC6K">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/HrCxsTK.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton <a
+                                    href="https://www.nykaafashion.com/indya-pink-maxi-dress-with-attached-floral-dupatta/p/298214">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/NKICSA5.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton <a
+                                    href="https://www.amazon.com/Womens-Sleeveless-Printed-Pleated-Dresses/dp/B07QMW17RZ">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/68mNPd5.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton <a
+                                    href="https://www.next.co.uk/shop/gender-women-productaffiliation-jumpsuitsandplaysuits-0#1_1127">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h2>Party wear</h2>
+            <hr>
+            <br>
+            <div class="trends">
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/F1eWdl5.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton silk <a
+                                    href="https://www.fashionfinicky.com/designer-stylish-dress---sr-393-899">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/oStDIJF.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton printed <a
+                                    href="https://www.stylesnic.com/bridal-sharara-dresses/">Link</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/paTkC7b.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Georgette</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/vNVYIN2.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Georgette <a
+                                    href="https://www.panashindia.com/bottle-green-embroidered-asymmetric-pakistani-sharara-suit-2638sl18">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/hiZRG0R.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Georgette <a
+                                    href="https://www.jiofab.com/most-popular-sage-color-butterfly-mono-net-party-wear-salwar-suit-jf303372?gclid=Cj0KCQiA-aGCBhCwARIsAHDl5x83jsanvT0W6gd0Moro98m-g5m6xzhPh6HSRwM1CRuUPVk9BeBvy0oaAuEhEALw_wcB">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/fypDAnc.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Georgette <a
+                                    href="https://www.efashionlady.com/latest-bridal-sharara-designs-collection/">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/75UCzwi.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Georgette <a
+                                    href="https://www.panashindia.com/peach-embroidered-bell-sleeved-pakistani-sharara-suit-3100sl04">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/rdleE6s.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Georgette <a
+                                    href="https://www.fashiononline.in/product/marooncolorsareegown-6595">Link</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="more">
+                <a href="">
+                    <h2>Next...</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-----------------------------------------------------------------------content end-------------------------------------------------------------------->
+
+    <!-------------------------------------------------------------------------footer----------------------------------------------------------------------->
+    <div class="footer">
+        <div class="pg">
+            <a href="aboutus.html" class="pg1">About Us</a>
+        </div>
+        <div class="pg">
+            <a href="contactus.html" class="pg2">Contact Us</a>
+        </div>
+        <div class="pg">
+            <a href="feedback.html" class="pg3">Feedback</a>
+        </div>
+        <div class="pg">
+            <button class="open-button" onclick="openform()">Chat Window</button>
+        </div>
+        <div class="chat-popup" id="myForm">
+            <form action="" class="form-container">
+                <h2>Chat</h2>
+                <b>Message</b>
+                <textarea placeholder="Type message.." name="msg" required></textarea>
+                <div class="chatbtncontainer">
+                    <button type="submit" class="btn">Send</button>
+                    <button type="button" class="btn cancel" onclick="closeform()">Close</button>
+                </div>
+            </form>
+        </div>
+        <div class="terms">
+            <a href="">Terms of Service</a>
+            <a href="" class="pp">Privacy policy</a>
+        </div>
+        <br><br>
+        <div class="copyright">
+            <p>Copyright &copy; 2021 - All Rights Reserved - <a href="#">Styling mindset</a></p>
+        </div>
+    </div>
+    <!-------------------------------------------------------------------------footer end----------------------------------------------------------------------->
+    <script src="java.js"></script>
+
+</body>
+
+</html>

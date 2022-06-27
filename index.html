@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Styling mindset</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<style>
+		@media (max-width: 600px) {
+			.content {
+				padding-top: 22rem;
+			}
+
+			.flower {
+				width: 70vw;
+				height: 50vh;
+			}
+
+			.hn {
+				margin-left: -5rem;
+			}
+
+			.boxse {
+				place-items: left;
+			}
+
+			.cloud {
+				width: 190px;
+				height: 190px;
+			}
+
+			.slogan {
+				font-size: 1rem;
+				height: 75%;
+				width: 75%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="back"></div>
+	<div class="maincontainer">
+
+		<!---------------------------------------------------------upper navigation----------------------------------------------------------------------->
+		<div class="main">
+			<div class="navbar">
+				<div class="logo" id="topico"></div>
+				<div><a href="index.html" class="a1">Styling mindset</a></div>
+				<div class="search">
+					<form>
+						<div class="flexrow">
+							<div class="inputwrapper">
+								<div><input id="inpf" type="text" placeholder="Search.." name="search"></div>
+								<div class="btndiv"><a href="#" onclick="searchFun()" class="fa fa-search"></a></div>
+							</div>
+							<div class="othericons">
+								<a href="#" class="fa fa-facebook fb"></a>
+								<a href="#" class="fa fa-twitter tw"></a>
+								<a href="#" class="fa fa-whatsapp wh"></a>
+								<a href="#" onclick="openForm()" class="fa fa-user-circle-o loginbtn"></a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!---------------------------------------------------------upper navigation ends------------------------------------------------------------------->
+
+		<!--------------------------------------------------------------navigation------------------------------------------------------------------------->
+		<div class="nav">
+			<div class="n1 nlink">
+				<a href="#" class="box">Home</a>
+			</div>
+			<div class="n2 nlink">
+				<a href="accessories.html" class="box">Accessories</a>
+			</div>
+			<div class="n2 nlink">
+				<a href="footwear.html" class="box">Footwear</a>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn box">Outfits
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content n2 nlink box">
+					<a href="ethnic.html">Ethnic wear</a>
+					<a href="western.html">Western wear</a>
+				</div>
+			</div>
+		</div>
+		<!-----------------------------------------------------------------navidation ends----------------------------------------------------------------->
+
+		<!----------------------------------------------------------------------form----------------------------------------------------------------------->
+		<div class="formwrapper">
+			<div class="aform">
+				<div class="cross" onclick="closeForm()">
+					<i class="fa fa-times"></i>
+				</div>
+				<div class="ava">
+				</div>
+				<form name="myForm" onsubmit="return validateForm()">
+					<div class="inp">
+						<span>First Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="fname" type="text"
+							name="fname" placeholder="First name">
+					</div>
+					<div class="inp">
+						<span>Last Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="lname" type="text"
+							name="lname" placeholder="Last name">
+					</div>
+					<div class="inp">
+						<span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+							id="email" type="text" name="email" placeholder="abc@gmail.com">
+					</div>
+					<div class="inp">
+						<span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox" id="psswrd"
+							type="password" name="psswrd" placeholder="Enter the password">
+						<i class="fa fa-eye showpwd peye" id="eye" onclick="myFunction()"></i>
+					</div>
+					<div class="inp">
+						<input
+							style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: white; font-weight: bold;"
+							class="textbox" type="submit" name="submit" value="Sign-up">
+					</div>
+					<div class="loginlink" onclick="openLoginForm()">
+						Log In
+					</div>
+				</form>
+			</div>
+		</div>
+		<!------------------------------------------------------------------login form--------------------------------------------------------------------->
+		<div class="formwrapper loginformwrapper">
+			<div class="aform">
+				<div class="cross" onclick="closeLoginForm()">
+					<i class="fa fa-times"></i>
+				</div>
+				<div class="ava">
+				</div>
+				<form name="myForm" onsubmit="return validateForm()">
+					<div class="inp">
+						<span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+							id="email" type="text" name="email" placeholder="abc@gmail.com">
+					</div>
+					<div class="inp pinp">
+						<div><span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span></div>
+
+						<div class="pinpwrapper">
+							<input class="textbox" id="psswrdlogin" type="password" name="psswrd"
+								placeholder="Enter the password">
+							<i class="fa fa-eye showpwd peye" onclick="showPass()"></i>
+						</div>
+					</div>
+					<div class="inp">
+						<input
+							style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: black; font-weight: bold;"
+							class="textbox" type="submit" name="submit" value="Log In">
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-----------------------------------------------------------------login form ends----------------------------------------------------------------->
+
+		<!-------------------------------------------------------------------form ends--------------------------------------------------------------------->
+
+		<!--------------------------------------------------------------------content---------------------------------------------------------------------->
+		<div class="content">
+			<p><i>"FASHION TRENDS"</i> come and go; meanwhile a society's values are established and evolving
+				characteristics
+				to their beliefs and culture. Fashion is just not an ambitious projected image of a reinterpreted good
+				old value to fulfill some funtion or agenda alike but rather a evocative and refreshing concept worthy
+				enough to be portrayed for society's appreciation that makes us even more
+				instinctive.<br><br>The success of the fashion trend lies in the way the society interprets the fashion
+				trend and judges it.<br><br>In fact
+				clothing and fashion are carriers of wide range of idelogical meanings. The fashion trends portays a
+				visual culture and style of dressing. The social agenda of these fashion trends is to express the
+				consumer's identity in terms of lifestyle choices and their attitude.<br><br>When a particular style of
+				dress comes in a vogue or used by film stars and models, it is blindly followed by college students.</p>
+			<div class="hn">
+				<div class="boxse">
+					<div class="flower f1">
+						<div class="cloud c1 lc lcl">
+							<div class="slogan">
+								"Fashion is what is offered in stores.<br>
+								Style is what you choose to wear."
+							</div>
+						</div>
+						<div class="cloud c1 rc rcl">
+							<div class="slogan">
+								"Buy less, choose well &<br>
+								Make it last."
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="boxse">
+					<div class="flower">
+						<div class="cloud c1 lc lcl">
+							<div class="slogan">
+								"Every day is a fashion show <br>
+								& world is your runway."
+							</div>
+						</div>
+						<div class="cloud c1 rc rcl">
+							<div class="slogan">
+								"People will stare,<br>
+								Make it worth their while."
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="boxse">
+					<div class="flower f3">
+						<div class="cloud c1 lc lcl">
+							<div class="slogan">
+								"Fashion is what offered in stores.<br>
+								Style is what you choose to wear."
+							</div>
+						</div>
+						<div class="cloud c1 rc rcl">
+							<div class="slogan">
+								"The dress must follow the body of a woman.<br>
+								Not the body following the shape of a dress."
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="boxse">
+					<div class="flower f1">
+						<div class="cloud c1 lc lcl">
+							<div class="slogan">
+								"Style is a way to say who you are without having to speak."
+							</div>
+						</div>
+						<div class="cloud c1 rc rcl">
+							<div class="slogan">
+								"Fashion is a trend,<br>
+								Style is within a person."
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-----------------------------------------------------------------------content end-------------------------------------------------------------------->
+
+	<!-------------------------------------------------------------------------footer----------------------------------------------------------------------->
+	<div class="footer">
+		<div class="pg">
+			<a href="aboutus.html" class="pg1">About Us</a>
+		</div>
+		<div class="pg">
+			<a href="contactus.html" class="pg2">Contact Us</a>
+		</div>
+		<div class="pg">
+			<a href="feedback.html" class="pg3">Feedback</a>
+		</div>
+		<div class="pg">
+			<button class="open-button" onclick="openform()">Chat Window</button>
+		</div>
+		<div class="chat-popup" id="myForm">
+			<form action="" class="form-container">
+				<h2>Chat</h2>
+				<b>Message</b>
+				<textarea placeholder="Type message.." name="msg" required></textarea>
+				<div class="chatbtncontainer">
+					<button type="submit" class="btn">Send</button>
+					<button type="button" class="btn cancel" onclick="closeform()">Close</button>
+				</div>
+			</form>
+		</div>
+		<div class="terms">
+			<a href="">Terms of Service</a>
+			<a href="" class="pp">Privacy policy</a>
+		</div>
+		<br><br>
+		<div class="copyright">
+			<p>Copyright &copy; 2021 - All Rights Reserved - <a href="#">Styling mindset</a></p>
+		</div>
+	</div>
+	<!-------------------------------------------------------------------------footer end----------------------------------------------------------------->
+	<script src="java.js"></script>
+</body>
+
+</html>

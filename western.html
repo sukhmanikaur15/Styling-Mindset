@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Styling mindset | Western wear</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        .bs {
+            padding: 1rem;
+            font-family: sans-serif;
+            color: #512a09;
+            padding-top: 12rem;
+            font-weight: bold;
+            font-size: large;
+        }
+
+        .bg {
+            background: url("https://i.imgur.com/ZUQFv6X.jpg");
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            position: fixed;
+            top: 0px;
+            width: 100vw;
+            z-index: -10;
+        }
+
+        .trends {
+            background-color: transparent;
+            min-height: 75vh;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 2rem;
+            row-gap: 2rem;
+            justify-content: center;
+        }
+
+        .pic {
+            box-sizing: border-box;
+            background-color: #ffffff55;
+            width: 300px;
+            height: 450px;
+            max-width: 90vw;
+            max-height: 60vh;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px black;
+
+        }
+
+        .items {
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        img {
+            height: 80%;
+            width: 100%;
+        }
+
+        .details {
+            padding-left: 0.5rem;
+        }
+
+        .c {
+            color: #512a09;
+        }
+
+        p {
+            color: black;
+            padding-top: 0.5rem;
+            text-align: center;
+        }
+
+        .more {
+            color: #701af0;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-align: right;
+            background-color: pink;
+            margin-left: 92%;
+            padding: 0.5rem;
+            border-radius: 10px;
+        }
+
+        .more a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .bs {
+                padding-top: 22rem;
+            }
+
+            .more {
+                margin-left: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="maincontainer">
+
+        <!---------------------------------------------------------upper navigation----------------------------------------------------------------------->
+        <div class="main">
+            <div class="navbar">
+                <div class="logo" id="topico"></div>
+                <div><a href="index.html" class="a1">Styling mindset</a></div>
+                <div class="search">
+                    <form>
+                        <div class="flexrow">
+                            <div class="inputwrapper">
+                                <div><input id="inpf" type="text" placeholder="Search.." name="search"></div>
+                                <div class="btndiv"><a href="#" onclick="searchFun()" class="fa fa-search"></a></div>
+                            </div>
+                            <div class="othericons">
+                                <a href="#" class="fa fa-facebook fb"></a>
+                                <a href="#" class="fa fa-twitter tw"></a>
+                                <a href="#" class="fa fa-whatsapp wh"></a>
+                                <a href="#" onclick="openForm()" class="fa fa-user-circle-o loginbtn"></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------------------upper navigation ends------------------------------------------------------------------->
+
+        <!--------------------------------------------------------------navigation------------------------------------------------------------------------->
+        <div class="nav">
+            <div class="n1 nlink">
+                <a href="index.html" class="box">Home</a>
+            </div>
+            <div class="n2 nlink">
+                <a href="accessories.html" class="box">Accessories</a>
+            </div>
+            <div class="n2 nlink">
+                <a href="footwear.html" class="box">Footwear</a>
+            </div>
+            <div class="dropdown ">
+                <button class="dropbtn box">Outfits
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content n2 nlink">
+                    <a href="ethnic.html" class="box">Ethnic wear</a>
+                    <a href="#" class="box">Western wear</a>
+                </div>
+            </div>
+        </div>
+        <!-----------------------------------------------------------------navidation ends----------------------------------------------------------------->
+
+        <!----------------------------------------------------------------------form----------------------------------------------------------------------->
+        <div class="formwrapper">
+            <div class="aform">
+                <div class="cross" onclick="closeForm()">
+                    <i class="fa fa-times"></i>
+                </div>
+                <div class="ava">
+                </div>
+                <form name="myForm" onsubmit="return validateForm()">
+                    <div class="inp">
+                        <span>First Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="fname" type="text"
+                            name="fname" placeholder="First name">
+                    </div>
+                    <div class="inp">
+                        <span>Last Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="lname" type="text"
+                            name="lname" placeholder="Last name">
+                    </div>
+                    <div class="inp">
+                        <span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+                            id="email" type="text" name="email" placeholder="abc@gmail.com">
+                    </div>
+                    <div class="inp">
+                        <span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox" id="psswrd"
+                            type="password" name="psswrd" placeholder="Enter the password">
+                        <i class="fa fa-eye showpwd peye" id="eye" onclick="myFunction()"></i>
+                    </div>
+                    <div class="inp">
+                        <input
+                            style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: white; font-weight: bold;"
+                            class="textbox" type="submit" name="submit" value="Sign-up">
+                    </div>
+                    <div class="loginlink" onclick="openLoginForm()">
+                        Log In
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!------------------------------------------------------------------login form--------------------------------------------------------------------->
+        <div class="formwrapper loginformwrapper">
+            <div class="aform">
+                <div class="cross" onclick="closeLoginForm()">
+                    <i class="fa fa-times"></i>
+                </div>
+                <div class="ava">
+                </div>
+                <form name="myForm" onsubmit="return validateForm()">
+                    <div class="inp">
+                        <span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+                            id="email" type="text" name="email" placeholder="abc@gmail.com">
+                    </div>
+                    <div class="inp pinp">
+                        <div><span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span></div>
+
+                        <div class="pinpwrapper">
+                            <input class="textbox" id="psswrdlogin" type="password" name="psswrd"
+                                placeholder="Enter the password">
+                            <i class="fa fa-eye showpwd peye" onclick="showPass()"></i>
+                        </div>
+                    </div>
+                    <div class="inp">
+                        <input
+                            style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: black; font-weight: bold;"
+                            class="textbox" type="submit" name="submit" value="Log In">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-----------------------------------------------------------------login form ends----------------------------------------------------------------->
+
+        <!-------------------------------------------------------------------form ends--------------------------------------------------------------------->
+
+        <!--------------------------------------------------------------------content---------------------------------------------------------------------->
+        <div class="bs">
+            <p class="c">Call it changing mindset or an effect of globalization, the western wear is spreading across
+                India
+                rapidly. Modern women today feel more comfortable wearing western wear than most traditional
+                clothes.<br><br>When people wear clothes that fit, they look much better than when they wear loose or
+                tight
+                clothes.<br><br>In the case of Salwars’, most women tend to wear loose, salwars and even the tops tend
+                to be
+                loose and flowy and the dupatta also tends to add more layers of clothes. All this extra cloth makes a
+                person seem a little older. Plus, most women don’t tend to pick exciting colours — most salwars are
+                often in bland, dull colours.<br><br>In the case of jeans, most jeans tend to hug the shape of the body
+                and
+                have very little extra/loose cloth. The shirts also tend to fit well. Plus, there are a ton of options
+                in terms of colour, style, logos, etc.</p>
+            <br>
+            <h2>Dresses</h2>
+            <hr>
+            <br>
+            <div class="trends">
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/StjgkKo.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Polyester <a
+                                    href="https://www.myntra.com/dresses/berrylush/berrylush-women-black--white-polka-dots-printed-two-piece-dress/12209548/buy?utm_source=perf_google_PLA&utm_medium=perf_google_PLA&utm_campaign=PLA_SSC_Apparel_Women&gclid=Cj0KCQiA-aGCBhCwARIsAHDl5x_C1_E-mQ29p-i2KzoGgpWTzJqkr7AkpOyDbcw_Tih-kZSajRVOOtsaAtupEALw_wcB">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/yMuDJhU.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Jeans <a
+                                    href="https://www.myntra.com/jeans/nifty/nifty-women-blue-bootcut-mid-rise-clean-look-stretchable-jeans/11609866/buy?utm_source=perf_google_PLA&utm_medium=perf_google_PLA&utm_campaign=PLA-SmartShopping-Top-Category&gclid=Cj0KCQiA-aGCBhCwARIsAHDl5x-JwvtRUVnNFs0CW1FmFZHg-hqjsXLUZ46PZuE2yyyOBtnmxINSPwUaAhtiEALw_wcB">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/zaQPYDr.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Polyester <a
+                                    href="https://www.myntra.com/tops/la-zoire/la-zoire-women-teal-blue-ruffled-shirt-style-top/7269192/buy?utm_source=perf_google_PLA&utm_medium=perf_google_PLA&utm_campaign=PLA_SSC_Apparel_Women&gclid=Cj0KCQiA-aGCBhCwARIsAHDl5x91tE1QtlvXEUwyjVfTerl1scANhprNOL2QsFRA_2KrLHxcquvIC7YaAiZKEALw_wcB">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/T97SmiA.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton puff sleeves <a
+                                    href="https://www.flipkart.com/buynewtrend-casual-puff-sleeve-solid-women-black-top/p/itma872cc4e47f3f?pid=TOPFPDYSXGXYBR8M&lid=LSTTOPFPDYSXGXYBR8MKT0GHF&marketplace=FLIPKART&cmpid=content_top_12477118216_u_8965229628_gmc_pla&tgi=sem,1,G,11214002,u,,,502923855084,,,,c,,,,,,,&ef_id=Cj0KCQiA-aGCBhCwARIsAHDl5x9cCF1zV7xsURZiXAmd7n9nYsy_jjo8TjS2Irs_lsmYWvUbfesiXfYaAs_aEALw_wcB:G:s&s_kwcid=AL!739!3!502923855084!!!u!302763144225!&gclid=Cj0KCQiA-aGCBhCwARIsAHDl5x9cCF1zV7xsURZiXAmd7n9nYsy_jjo8TjS2Irs_lsmYWvUbfesiXfYaAs_aEALw_wcB">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/ObXmmFi.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton <a
+                                    href="https://www.sioutlet2021.ru/content?c=party%20wear%20western%20dresses&id=36">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/flvGn2C.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Georgette <a
+                                    href="https://www.punjabidesigners.com/product/western-dress-for-party-wear/">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/sQfxGLF.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Polyester <a
+                                    href="https://www.myntra.com/dresses/athena/athena-women-burgundy-solid-sheath-dress/11919420/buy?utm_source=perf_google_PLA&utm_medium=perf_google_PLA&utm_campaign=PLA_SSC_Apparel_Women&gclid=Cj0KCQiA-aGCBhCwARIsAHDl5x_u5BHBjJWBZXCeTvBQ9AEVOtcDzkFp3nkX6y5zvOV471Zx28zDPt4aAqPHEALw_wcB">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/woUAwu9.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Khadi <a
+                                    href="https://maharanidesigner.com/product/party-wear-western-dress-3/">Link</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/EOawkZq.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Santoon silk <a
+                                    href="https://www.ethnicplus.in/grey-embroidery-net-partywear-western-gown">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/LgV22hi.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Silk <a
+                                    href="https://pbuy2021.cf/ProductDetail.aspx?iid=240121434&pr=78.99">Link</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/tk2wi49.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Georgette <a
+                                    href="https://www.bewakoof.com/blog/3-trendy-indo-western-outfit-ideas-for-different-occasions">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/ukLarJ5.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Khadi <a
+                                    href="https://www.punjabidesigners.com/product/indo-western-dresses-online-australia/">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/mzuM8jH.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Polycrepe <a
+                                    href="https://www.limeroad.com/black-poly-crepe-triraj-p14800080">Link</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/fETflpq.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton <a
+                                    href="https://www.amazon.in/Biltoxi-Starped-Western-College-Ladies/dp/B084MJZTTB">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/khbv6v1.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton <a
+                                    href="https://www.nykaafashion.com/only-olive-belted-utility-shift-dress/p/393052?adsource=shopping_india&utm_content=ads&utm_source=GooglePaid&utm_medium=PLA&utm_campaign=PLA_SmartShopping-AllBrands&gclid=Cj0KCQiA-aGCBhCwARIsAHDl5x_LOd2SFjL7CTCJgn6y99dmp3KT1CvALtzl905TSPh11Ke4aBJy3xUaApaDEALw_wcB">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/9VcTxTG.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Jeans</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/IMzhTKQ.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p><a href="https://pbuyvip.cf/ProductDetail.aspx?iid=201478616&pr=58.99">Link</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/FjPpGjV.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Polyester <a
+                                    href="https://www.myntra.com/dresses/sassafras/sassafras-women-black--pink-printed-wrap-dress/10856160/buy">Link</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/D15y2eE.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p>Material: Cotton</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pic">
+                    <div class="items">
+                        <img src="https://i.imgur.com/Sa4YejL.jpg">
+                        <div class="details">
+                            <h3>Details...</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="more">
+                <a href="">
+                    <h2>Next...</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!----------------------------------------------------------------------content end--------------------------------------------------------------------->
+
+    <!-------------------------------------------------------------------------footer----------------------------------------------------------------------->
+    <div class="footer">
+        <div class="pg">
+            <a href="aboutus.html" class="pg1">About Us</a>
+        </div>
+        <div class="pg">
+            <a href="contactus.html" class="pg2">Contact Us</a>
+        </div>
+        <div class="pg">
+            <a href="feedback.html" class="pg3">Feedback</a>
+        </div>
+        <div class="pg">
+            <button class="open-button" onclick="openform()">Chat Window</button>
+        </div>
+        <div class="chat-popup" id="myForm">
+            <form action="" class="form-container">
+                <h2>Chat</h2>
+                <b>Message</b>
+                <textarea placeholder="Type message.." name="msg" required></textarea>
+                <div class="chatbtncontainer">
+                    <button type="submit" class="btn">Send</button>
+                    <button type="button" class="btn cancel" onclick="closeform()">Close</button>
+                </div>
+            </form>
+        </div>
+        <div class="terms">
+            <a href="">Terms of Service</a>
+            <a href="" class="pp">Privacy policy</a>
+        </div>
+        <br><br>
+        <div class="copyright">
+            <p>Copyright &copy; 2021 - All Rights Reserved - <a href="#">Styling mindset</a></p>
+        </div>
+    </div>
+    <!-------------------------------------------------------------------------footer end----------------------------------------------------------------->
+    <script src="java.js"></script>
+</body>
+
+</html>

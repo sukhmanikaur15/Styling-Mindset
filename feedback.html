@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Styling mindset | Feedback</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <style>
+        .bg {
+            background: url("https://i.imgur.com/DOYMtUz.jpg");
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            position: fixed;
+            top: 0px;
+            width: 100vw;
+            z-index: -1;
+        }
+
+        .ds {
+            padding: 1rem;
+            font-family: sans-serif;
+            color: #512a09;
+            padding-top: 12rem;
+            font-weight: bold;
+            font-size: large;
+        }
+
+        .form {
+            background-color: #000000;
+            max-width: 500px;
+            margin-left: 35%;
+            border-radius: 10px;
+            font-family: sans-serif;
+            padding: 2rem;
+            color: white;
+            box-shadow: 0px 0px 10px white inset;
+        }
+
+        .f1 {
+            width: 210px;
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+            padding-left: 1rem;
+            margin-left: 2rem;
+        }
+
+        .t {
+            border-radius: 10px;
+            border: none;
+            padding-left: 1rem;
+        }
+
+        .f {
+            height: 40px;
+            width: 210px;
+            border-radius: 10px;
+            background-color: #944dff;
+            color: white;
+        }
+
+        .f:hover {
+            background-color: #ff0066;
+        }
+
+        @media (max-width:600px) {
+            .t {
+                height: 40%;
+                width: 75%;
+            }
+
+            .form {
+                margin-left: 10%;
+            }
+
+            .ds {
+                padding-top: 22rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="maincontainer">
+
+        <!---------------------------------------------------------upper navigation----------------------------------------------------------------------->
+        <div class="main">
+            <div class="navbar">
+                <div class="logo" id="topico"></div>
+                <div><a href="index.html" class="a1">Styling mindset</a></div>
+                <div class="search">
+                    <form>
+                        <div class="flexrow">
+                            <div class="inputwrapper">
+                                <div><input id="inpf" type="text" placeholder="Search.." name="search"></div>
+                                <div class="btndiv"><a href="#" onclick="searchFun()" class="fa fa-search"></a></div>
+                            </div>
+                            <div class="othericons">
+                                <a href="#" class="fa fa-facebook fb"></a>
+                                <a href="#" class="fa fa-twitter tw"></a>
+                                <a href="#" class="fa fa-whatsapp wh"></a>
+                                <a href="#" onclick="openForm()" class="fa fa-user-circle-o loginbtn"></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------------------upper navigation ends------------------------------------------------------------------->
+
+        <!--------------------------------------------------------------navigation------------------------------------------------------------------------->
+        <div class="nav">
+            <div class="n1 nlink">
+                <a href="index.html" class="box">Home</a>
+            </div>
+            <div class="n2 nlink">
+                <a href="accessories.html" class="box">Accessories</a>
+            </div>
+            <div class="n2 nlink">
+                <a href="footwear.html" class="box">Footwear</a>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn box">Outfits
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content n2 nlink box">
+                    <a href="ethnic.html">Ethnic wear</a>
+                    <a href="western.html">Western wear</a>
+                </div>
+            </div>
+        </div>
+        <!-----------------------------------------------------------------navidation ends----------------------------------------------------------------->
+
+        <!----------------------------------------------------------------------form----------------------------------------------------------------------->
+		<div class="formwrapper">
+			<div class="aform">
+				<div class="cross" onclick="closeForm()">
+					<i class="fa fa-times"></i>
+				</div>
+				<div class="ava">
+				</div>
+				<form name="myForm" onsubmit="return validateForm()">
+					<div class="inp">
+						<span>First Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="fname" type="text"
+							name="fname" placeholder="First name">
+					</div>
+					<div class="inp">
+						<span>Last Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="lname" type="text"
+							name="lname" placeholder="Last name">
+					</div>
+					<div class="inp">
+						<span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+							id="email" type="text" name="email" placeholder="abc@gmail.com">
+					</div>
+					<div class="inp">
+						<span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox" id="psswrd"
+							type="password" name="psswrd" placeholder="Enter the password">
+						<i class="fa fa-eye showpwd peye" onclick="myFunction()"></i>
+					</div>
+					<div class="inp">
+						<input
+							style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: white; font-weight: bold;"
+							class="textbox" type="submit" name="submit" value="Sign-up">
+					</div>
+					<div class="loginlink" onclick="openLoginForm()">
+						Log In
+					</div>
+				</form>
+			</div>
+		</div>
+		<!------------------------------------------------------------------login form--------------------------------------------------------------------->
+		<div class="formwrapper loginformwrapper">
+			<div class="aform">
+				<div class="cross" onclick="closeLoginForm()">
+					<i class="fa fa-times"></i>
+				</div>
+				<div class="ava">
+				</div>
+				<form name="myForm" onsubmit="return validateForm()">
+					<div class="inp">
+						<span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+							id="email" type="text" name="email" placeholder="abc@gmail.com">
+					</div>
+					<div class="inp pinp">
+						<div><span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span></div>
+
+						<div class="pinpwrapper">
+							<input class="textbox" id="psswrdlogin" type="password" name="psswrd"
+								placeholder="Enter the password">
+							<i class="fa fa-eye showpwd peye" onclick="showPass()"></i>
+						</div>
+					</div>
+					<div class="inp">
+						<input
+							style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: black; font-weight: bold;"
+							class="textbox" type="submit" name="submit" value="Log In">
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-----------------------------------------------------------------login form ends----------------------------------------------------------------->
+
+		<!-------------------------------------------------------------------form ends--------------------------------------------------------------------->
+
+    <!--------------------------------------------------------------------content---------------------------------------------------------------------->
+    <div class="ds">
+        <h2>Feedback</h2>
+    </div>
+    <div class="form">
+        <form>
+            <p>We would love to hear your thoughts, suggestions, concerns or problem with anything so we can
+                improve!</p><br>
+            <hr><br>
+            <h4>Name</h4>
+            <br>&emsp;&emsp;
+            <input type="text" id="fname" placeholder="Name" class="f1">
+            <br><br>
+            <h4>E-mail</h4>
+            <br>&emsp;&emsp;&nbsp;
+            <input type="email" id="email" placeholder="myname@example.com" class="f1">
+            <br><br>
+            <h4>Feedback type</h4>
+            <br>&emsp;&emsp;&emsp;
+            <input type="radio">Comments
+            &emsp;&emsp;&emsp;
+            <input type="radio">Suggestions
+            &emsp;&emsp;&emsp;
+            <input type="radio">Questions
+            <br>
+            <br>
+            <h4>Describe your feedback</h4>
+            <br>
+            &emsp;&emsp;
+            <textarea name="feedback" rows="10" cols="55" class="t"></textarea>
+            <br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <button class="f">Submit</button>
+        </form>
+    </div>
+    <br><br>
+    <!-----------------------------------------------------------------------content end--------------------------------------------------------------->
+
+    <!-------------------------------------------------------------------------footer------------------------------------------------------------------>
+    <div class="footer">
+		<div class="pg">
+			<a href="aboutus.html" class="pg1">About Us</a>
+		</div>
+		<div class="pg">
+			<a href="contactus.html" class="pg2">Contact Us</a>
+		</div>
+		<div class="pg">
+			<a href="#" class="pg3">Feedback</a>
+		</div>
+		<div class="pg">
+			<button class="open-button" onclick="openform()">Chat Window</button>
+		</div>
+		<div class="chat-popup" id="myForm">
+			<form action="" class="form-container">
+				<h2>Chat</h2>
+				<b>Message</b>
+				<textarea placeholder="Type message.." name="msg" required></textarea>
+				<div class="chatbtncontainer">
+					<button type="submit" class="btn">Send</button>
+					<button type="button" class="btn cancel" onclick="closeform()">Close</button>
+				</div>
+			</form>
+		</div>
+		<div class="terms">
+			<a href="">Terms of Service</a>
+			<a href="" class="pp">Privacy policy</a>
+		</div>
+		<br><br>
+		<div class="copyright">
+			<p>Copyright &copy; 2021 - All Rights Reserved - <a href="#">Styling mindset</a></p>
+		</div>
+	</div>
+    <!-------------------------------------------------------------------------footer end-------------------------------------------------------------->
+    <script src="java.js"></script>
+</body>
+
+</html>

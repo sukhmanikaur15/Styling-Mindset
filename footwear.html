@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Styling mindset | Footwear</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<style>
+		.bg {
+			background: url("https://i.imgur.com/bxW6kqV.jpg");
+			background-size: cover;
+			background-position: center;
+			min-height: 100vh;
+			position: fixed;
+			top: 0px;
+			width: 100vw;
+			z-index: -10;
+		}
+
+		.bs {
+			padding: 1rem;
+			font-family: sans-serif;
+			color: #512a09;
+			padding-top: 12rem;
+			font-weight: bold;
+			font-size: large;
+		}
+
+		.trends {
+			background-color: transparent;
+			min-height: 75vh;
+			display: flex;
+			flex-wrap: wrap;
+			column-gap: 2rem;
+			row-gap: 2rem;
+			justify-content: center;
+		}
+
+		.pic {
+			box-sizing: border-box;
+			background-color: #ffffff55;
+			width: 300px;
+			height: 450px;
+			max-width: 90vw;
+			max-height: 60vh;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 0 10px black;
+
+		}
+
+		.items {
+			height: 100%;
+			width: 100%;
+			background-position: center;
+			background-size: cover;
+		}
+
+		img {
+			height: 80%;
+			width: 100%;
+		}
+
+		.details {
+			padding-left: 0.5rem;
+		}
+
+		p {
+			color: black;
+			padding-top: 0.5rem;
+			text-align: center;
+		}
+
+		.more {
+			color: #701af0;
+			font-weight: bold;
+			font-family: sans-serif;
+			text-align: right;
+			background-color: pink;
+			margin-left: 92%;
+			padding: 0.5rem;
+			border-radius: 10px;
+		}
+
+		.more a {
+			text-decoration: none;
+		}
+
+		@media (max-width: 600px) {
+			.bs {
+				padding-top: 22rem;
+			}
+
+			.more {
+				margin-left: 80%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="bg"></div>
+	<div class="maincontainer">
+
+		<!---------------------------------------------------------upper navigation----------------------------------------------------------------------->
+		<div class="main">
+			<div class="navbar">
+				<div class="logo" id="topico"></div>
+				<div><a href="index.html" class="a1">Styling mindset</a></div>
+				<div class="search">
+					<form>
+						<div class="flexrow">
+							<div class="inputwrapper">
+								<div><input id="inpf" type="text" placeholder="Search.." name="search"></div>
+								<div class="btndiv"><a href="#" onclick="searchFun()" class="fa fa-search"></a></div>
+							</div>
+							<div class="othericons">
+								<a href="#" class="fa fa-facebook fb"></a>
+								<a href="#" class="fa fa-twitter tw"></a>
+								<a href="#" class="fa fa-whatsapp wh"></a>
+								<a href="#" onclick="openForm()" class="fa fa-user-circle-o loginbtn"></a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!---------------------------------------------------------upper navigation ends------------------------------------------------------------------->
+
+		<!--------------------------------------------------------------navigation------------------------------------------------------------------------->
+		<div class="nav">
+			<div class="n1 nlink">
+				<a href="index.html" class="box">Home</a>
+			</div>
+			<div class="n2 nlink">
+				<a href="accessories.html" class="box">Accessories</a>
+			</div>
+			<div class="n2 nlink">
+				<a href="#" class="box">Footwear</a>
+			</div>
+			<div class="dropdown ">
+				<button class="dropbtn box">Outfits
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content n2 nlink">
+					<a href="ethnic.html" class="box">Ethnic wear</a>
+					<a href="western.html" class="box">Western wear</a>
+				</div>
+			</div>
+		</div>
+		<!-----------------------------------------------------------------navidation ends----------------------------------------------------------------->
+
+		<!----------------------------------------------------------------------form----------------------------------------------------------------------->
+		<div class="formwrapper">
+			<div class="aform">
+				<div class="cross" onclick="closeForm()">
+					<i class="fa fa-times"></i>
+				</div>
+				<div class="ava">
+				</div>
+				<form name="myForm" onsubmit="return validateForm()">
+					<div class="inp">
+						<span>First Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="fname" type="text"
+							name="fname" placeholder="First name">
+					</div>
+					<div class="inp">
+						<span>Last Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="lname" type="text"
+							name="lname" placeholder="Last name">
+					</div>
+					<div class="inp">
+						<span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+							id="email" type="text" name="email" placeholder="abc@gmail.com">
+					</div>
+					<div class="inp">
+						<span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox" id="psswrd"
+							type="password" name="psswrd" placeholder="Enter the password">
+						<i class="fa fa-eye showpwd peye" onclick="myFunction()"></i>
+					</div>
+					<div class="inp">
+						<input
+							style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: white; font-weight: bold;"
+							class="textbox" type="submit" name="submit" value="Sign-up">
+					</div>
+					<div class="loginlink" onclick="openLoginForm()">
+						Log In
+					</div>
+				</form>
+			</div>
+		</div>
+		<!------------------------------------------------------------------login form--------------------------------------------------------------------->
+		<div class="formwrapper loginformwrapper">
+			<div class="aform">
+				<div class="cross" onclick="closeLoginForm()">
+					<i class="fa fa-times"></i>
+				</div>
+				<div class="ava">
+				</div>
+				<form name="myForm" onsubmit="return validateForm()">
+					<div class="inp">
+						<span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+							id="email" type="text" name="email" placeholder="abc@gmail.com">
+					</div>
+					<div class="inp pinp">
+						<div><span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span></div>
+
+						<div class="pinpwrapper">
+							<input class="textbox" id="psswrdlogin" type="password" name="psswrd"
+								placeholder="Enter the password">
+							<i class="fa fa-eye showpwd peye" onclick="showPass()"></i>
+						</div>
+					</div>
+					<div class="inp">
+						<input
+							style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: black; font-weight: bold;"
+							class="textbox" type="submit" name="submit" value="Log In">
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-----------------------------------------------------------------login form ends----------------------------------------------------------------->
+
+		<!-------------------------------------------------------------------form ends--------------------------------------------------------------------->
+		<!----------------------------------------------------------------------form----------------------------------------------------------------------->
+		<div class="formwrapper">
+			<div class="aform">
+				<div class="cross" onclick="closeForm()">
+					<i class="fa fa-times"></i>
+				</div>
+				<div class="ava">
+				</div>
+				<form name="myForm" onsubmit="return validateForm()">
+					<div class="inp">
+						<span>First Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="fname" type="text"
+							name="fname" placeholder="First name">
+					</div>
+					<div class="inp">
+						<span>Last Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="lname" type="text"
+							name="lname" placeholder="Last name">
+					</div>
+					<div class="inp">
+						<span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+							id="email" type="text" name="email" placeholder="abc@gmail.com">
+					</div>
+					<div class="inp">
+						<span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox" id="psswrd"
+							type="password" name="psswrd" placeholder="Enter the password">
+						<i class="fa fa-eye showpwd peye" id="eye" onclick="myFunction()"></i>
+					</div>
+					<div class="inp">
+						<input
+							style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: white; font-weight: bold;"
+							class="textbox" type="submit" name="submit" value="Sign-up">
+					</div>
+					<div class="loginlink" onclick="openLoginForm()">
+						Log In
+					</div>
+				</form>
+			</div>
+		</div>
+		<!------------------------------------------------------------------login form--------------------------------------------------------------------->
+		<div class="formwrapper loginformwrapper">
+			<div class="aform">
+				<div class="cross" onclick="closeLoginForm()">
+					<i class="fa fa-times"></i>
+				</div>
+				<div class="ava">
+				</div>
+				<form name="myForm" onsubmit="return validateForm()">
+					<div class="inp">
+						<span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+							id="email" type="text" name="email" placeholder="abc@gmail.com">
+					</div>
+					<div class="inp pinp">
+						<div><span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span></div>
+
+						<div class="pinpwrapper">
+							<input class="textbox" id="psswrdlogin" type="password" name="psswrd"
+								placeholder="Enter the password">
+							<i class="fa fa-eye showpwd peye" onclick="showPass()"></i>
+						</div>
+					</div>
+					<div class="inp">
+						<input
+							style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: black; font-weight: bold;"
+							class="textbox" type="submit" name="submit" value="Log In">
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-----------------------------------------------------------------login form ends----------------------------------------------------------------->
+
+		<!-------------------------------------------------------------------form ends--------------------------------------------------------------------->
+
+		<!--------------------------------------------------------------------content---------------------------------------------------------------------->
+		<div class="bs">
+			<p>Mostly women choose comfy shoes to wear these days as they can walk easily and they do not tired too
+				fast.<br>
+				Girls can go for the shoes which are matching with their dress. They never think about tired or comfy
+				before wear. They are keen to be a fashion holic personality. They usually wear according to trends.</p>
+			<br>
+			<h2>Sandals/Slippers</h2>
+			<hr>
+			<br>
+			<div class="trends">
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/q4pQPqW.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.amazon.in/Blinder-Womens-Doctor-Stylish-Slipper/dp/B074W7NYBY">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/Y2nJKp6.png">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.myntra.com/flats/street-style-store/street-style-store-women-black-woven-design-open-toe-flats/7326288/buy?utm_source=perf_google_PLA&utm_medium=perf_google_PLA&utm_campaign=PLA-SmartShopping-Top-Category&gclid=CjwKCAiA4rGCBhAQEiwAelVtixyZ_Lx55TlMXBnUGnoJud2xxCuO5mBjdzWnMTNLg4kOEGH09HqyPxoCYMYQAvD_BwE">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/jw59wEO.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a href="https://www.fashiola.in/women/footwear/?mrk=simmi-shoes">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/jCMeYlB.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.flipkart.com/drohari-women-beige-heels/p/itm6631e96edafad?pid=SNDFXFGMEC2YTFFP&lid=LSTSNDFXFGMEC2YTFFPUGVY7R&marketplace=FLIPKART&cmpid=content_sandal_12477118216_u_8965229628_gmc_pla&tgi=sem,1,G,11214002,u,,,502923855084,,,,c,,,,,,,&ef_id=CjwKCAiA4rGCBhAQEiwAelVti4JEK2Crr7PTHm3-7KOOO1DqIlnd2BsIZZJytPUGrAIz5Qu2GERb1hoCNVoQAvD_BwE:G:s&s_kwcid=AL!739!3!502923855084!!!u!294747634266!&gclid=CjwKCAiA4rGCBhAQEiwAelVti4JEK2Crr7PTHm3-7KOOO1DqIlnd2BsIZZJytPUGrAIz5Qu2GERb1hoCNVoQAvD_BwE">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/CAq4Shm.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a href="https://www.aliexpress.com/item/32879611209.html">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/tPE65HF.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.amazon.in/slippers-fashion-stylish-Sandals-Flip-flops/dp/B07NPLNPFN">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/c5valUd.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.amazon.in/Boomboom-WomenSandals-Sandals-Flowers-Bohemia/dp/B07P5ZL1VY">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/7GWgNkA.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a href="https://www.luluandsky.com/black-sandals-with-block-heels.html">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/YZounpu.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.amazon.in/Sainex-Womens-Casual-Wedges-Footwear/dp/B07PRSNKMJ/ref=asc_df_B07PRSNKMJ/?tag=googleshopdes-21&linkCode=df0&hvadid=397083268727&hvpos=&hvnetw=g&hvrand=17663049716761136912&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9061715&hvtargid=pla-841370907052&psc=1&ext_vrnc=hi">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/6BjiJJr.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.justdial.com/Lady-Sandals-Footwear-Bfower-Wedge-Sandals-Thick-Soled-Sponge-Cake-Buckle-High-Heeled-Roman-Shoes-Black/pid-171206234">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/CoS0QNu.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a href="https://in.pinterest.com/pin/734297914233009714/">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/gTb1wBs.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a href="">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<h2>Shoes/Bellies</h2>
+			<hr>
+			<br>
+			<div class="trends">
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/X9mLh6Q.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://shilp-world.de/product/leather-slippers-shoes-women-footwear-hand-embroidery-shoes/">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/wgoF9rL.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a href="https://www.ajio.com/women-footwear/c/830307">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/JyDmZqf.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.amazon.in/WORLD-WEAR-FOOTWEAR-Multicolour-11023-11032/dp/B085HRPCKR">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/P5so0L6.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.amazon.in/Footwear-Womens-Leather-Ballroom-Shoes/dp/B077D3Z3ST">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/Ckle4pp.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a href="https://paytmmall.com/women-boots-glpid-5264">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/lrkXVxf.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a href="https://www.amazon.in/Womens-Stretch-Stylish-Instep-Closure/dp/B0">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/a4Xb0pi.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://onshopdeals.com/eofk-new-women-flats-shoes-womens-flat-mary-jane-female-ladies-mesh-fabric-breathable-gray-casual-comfortable-shoes-woman/">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/tzxHuJC.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.amazon.com/Womens-Slip-Casual-Walking-Sneakers/dp/B0793T4NQD">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/lZ9nhNP.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.runnersworld.com/gear/a25474872/best-nike-shoes-for-women/">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/0SmygeO.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.desertcart.in/products/157895472-irsoe-women-girls-bellies">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/vkJjmMe.jpg">
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/CRwDbaX.jpg">
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<div class="more">
+				<a href="">
+					<h2>Next...</h2>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!----------------------------------------------------------------------content end-------------------------------------------------------------------->
+
+	<!--------------------------------------------------------------------footer----------------------------------------------------------------------->
+	<div class="footer">
+		<div class="pg">
+			<a href="aboutus.html" class="pg1">About Us</a>
+		</div>
+		<div class="pg">
+			<a href="contactus.html" class="pg2">Contact Us</a>
+		</div>
+		<div class="pg">
+			<a href="feedback.html" class="pg3">Feedback</a>
+		</div>
+		<div class="pg">
+			<button class="open-button" onclick="openform()">Chat Window</button>
+		</div>
+		<div class="chat-popup" id="myForm">
+			<form action="" class="form-container">
+				<h2>Chat</h2>
+				<b>Message</b>
+				<textarea placeholder="Type message.." name="msg" required></textarea>
+				<div class="chatbtncontainer">
+					<button type="submit" class="btn">Send</button>
+					<button type="button" class="btn cancel" onclick="closeform()">Close</button>
+				</div>
+			</form>
+		</div>
+		<div class="terms">
+			<a href="">Terms of Service</a>
+			<a href="" class="pp">Privacy policy</a>
+		</div>
+		<br><br>
+		<div class="copyright">
+			<p>Copyright &copy; 2021 - All Rights Reserved - <a href="#">Styling mindset</a></p>
+		</div>
+	</div>
+	<!-------------------------------------------------------------------------footer end----------------------------------------------------------------->
+	<script src="java.js"></script>
+</body>
+
+</html>

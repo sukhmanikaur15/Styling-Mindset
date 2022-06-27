@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Styling mindset | Accessories</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<style>
+		.bg {
+			background: url("https://i.imgur.com/BZwURML.jpg");
+			background-size: cover;
+			background-position: center;
+			min-height: 100vh;
+			position: fixed;
+			top: 0px;
+			width: 100vw;
+			z-index: -10;
+		}
+
+		.bs {
+			padding: 1rem;
+			font-family: sans-serif;
+			color: #512a09;
+			padding-top: 12rem;
+			font-weight: bold;
+			font-size: large;
+		}
+
+		.trends {
+			background-color: transparent;
+			min-height: 75vh;
+			display: flex;
+			flex-wrap: wrap;
+			column-gap: 2rem;
+			row-gap: 2rem;
+			justify-content: center;
+		}
+
+		.pic {
+			box-sizing: border-box;
+			background-color: #ffffff55;
+			width: 300px;
+			height: 450px;
+			max-width: 90vw;
+			max-height: 60vh;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 0 10px black;
+
+		}
+
+		.items {
+			height: 100%;
+			width: 100%;
+			background-position: center;
+			background-size: cover;
+		}
+
+		img {
+			height: 80%;
+			width: 100%;
+		}
+
+		.details {
+			padding-left: 0.5rem;
+		}
+
+		.c {
+			color: #512a09;
+		}
+
+		p {
+			color: black;
+			padding-top: 0.5rem;
+			text-align: center;
+		}
+
+		.more {
+			color: #701af0;
+			font-weight: bold;
+			font-family: sans-serif;
+			text-align: right;
+			background-color: pink;
+			margin-left: 92%;
+			padding: 0.5rem;
+			border-radius: 10px;
+		}
+
+		.more a {
+			text-decoration: none;
+		}
+
+		@media (max-width: 600px) {
+			.bs {
+				padding-top: 22rem;
+			}
+
+			.more {
+				margin-left: 80%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="bg"></div>
+	<div class="maincontainer">
+
+		<!---------------------------------------------------------upper navigation----------------------------------------------------------------------->
+		<div class="main">
+			<div class="navbar">
+				<div class="logo" id="topico"></div>
+				<div><a href="index.html" class="a1">Styling mindset</a></div>
+				<div class="search">
+					<form>
+						<div class="flexrow">
+							<div class="inputwrapper">
+								<div><input id="inpf" type="text" placeholder="Search.." name="search"></div>
+								<div class="btndiv"><a href="#" onclick="searchFun()" class="fa fa-search"></a></div>
+							</div>
+							<div class="othericons">
+								<a href="#" class="fa fa-facebook fb"></a>
+								<a href="#" class="fa fa-twitter tw"></a>
+								<a href="#" class="fa fa-whatsapp wh"></a>
+								<a href="#" onclick="openForm()" class="fa fa-user-circle-o loginbtn"></a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!---------------------------------------------------------upper navigation ends------------------------------------------------------------------->
+
+		<!--------------------------------------------------------------navigation------------------------------------------------------------------------->
+		<div class="nav">
+			<div class="n1 nlink">
+				<a href="index.html" class="box">Home</a>
+			</div>
+			<div class="n2 nlink">
+				<a href="#" class="box">Accessories</a>
+			</div>
+			<div class="n2 nlink">
+				<a href="footwear.html" class="box">Footwear</a>
+			</div>
+			<div class="dropdown ">
+				<button class="dropbtn box">Outfits
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content n2 nlink">
+					<a href="ethnic.html" class="box">Ethnic wear</a>
+					<a href="western.html" class="box">Western wear</a>
+				</div>
+			</div>
+		</div>
+		<!-----------------------------------------------------------------navidation ends----------------------------------------------------------------->
+
+		<!----------------------------------------------------------------------form----------------------------------------------------------------------->
+		<div class="formwrapper">
+			<div class="aform">
+				<div class="cross" onclick="closeForm()">
+					<i class="fa fa-times"></i>
+				</div>
+				<div class="ava">
+				</div>
+				<form name="myForm" onsubmit="return validateForm()">
+					<div class="inp">
+						<span>First Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="fname" type="text"
+							name="fname" placeholder="First name">
+					</div>
+					<div class="inp">
+						<span>Last Name:&emsp;&emsp;&emsp;&emsp;</span><input class="textbox" id="lname" type="text"
+							name="lname" placeholder="Last name">
+					</div>
+					<div class="inp">
+						<span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+							id="email" type="text" name="email" placeholder="abc@gmail.com">
+					</div>
+					<div class="inp">
+						<span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox" id="psswrd"
+							type="password" name="psswrd" placeholder="Enter the password">
+						<i class="fa fa-eye showpwd peye" onclick="myFunction()"></i>
+					</div>
+					<div class="inp">
+						<input
+							style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: white; font-weight: bold;"
+							class="textbox" type="submit" name="submit" value="Sign-up">
+					</div>
+					<div class="loginlink" onclick="openLoginForm()">
+						Log In
+					</div>
+				</form>
+			</div>
+		</div>
+		<!------------------------------------------------------------------login form--------------------------------------------------------------------->
+		<div class="formwrapper loginformwrapper">
+			<div class="aform">
+				<div class="cross" onclick="closeLoginForm()">
+					<i class="fa fa-times"></i>
+				</div>
+				<div class="ava">
+				</div>
+				<form name="myForm" onsubmit="return validateForm()">
+					<div class="inp">
+						<span>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span><input class="textbox"
+							id="email" type="text" name="email" placeholder="abc@gmail.com">
+					</div>
+					<div class="inp pinp">
+						<div><span>Password:&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span></div>
+
+						<div class="pinpwrapper">
+							<input class="textbox" id="psswrdlogin" type="password" name="psswrd"
+								placeholder="Enter the password">
+							<i class="fa fa-eye showpwd peye" id="eye" onclick="myFunction()"></i>
+						</div>
+					</div>
+					<div class="inp">
+						<input
+							style="margin-left: 6rem; margin-bottom: 2rem; background-color: #944dff; color: black; font-weight: bold;"
+							class="textbox" type="submit" name="submit" value="Log In">
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-----------------------------------------------------------------login form ends----------------------------------------------------------------->
+
+		<!-------------------------------------------------------------------form ends--------------------------------------------------------------------->
+
+		<!--------------------------------------------------------------------content---------------------------------------------------------------------->
+		<div class="bs">
+			<p class="c">Pearl set for women is being in trending these days.<br>
+				Girls wearing simple locket set.</p>
+			<br>
+			<h2>Necklaces</h2>
+			<hr>
+			<br>
+			<div class="trends">
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/ZOYyUhq.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.shopclues.com/catalyst-wedding-wear-party-wear-designer-stylish-pearl-necklace-set-with-choker-set-earrings-with-mang-tikka-1-w-w-ckr-143396165.html">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/3QUoCIf.jpg">
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/mHF2x3D.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.ideakart.com/products/prita-s-bridal-collection-kundan-pearl-rani-haar-necklace-set-for-women-166666">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/Z7iRWf1.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.indiamart.com/proddetail/stylish-wedding-silver-choker-necklace-set-17383466730.html">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/YQBvfqZ.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://silvermerc.com/jewellery-sets/oxidised-silver-jewellery-set-for-women-and-girls-indian-necklace-for-girls-and-women/">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/h10OQm8.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.myntra.com/jewellery-set/zaveri-pearls/zaveri-pearls-gold-plated--white-stones--pearls-studed-choker-jewellery-set/12883412/buy?utm_source=perf_google_PLA&utm_medium=perf_google_PLA&utm_campaign=PLA-SmartShopping-Top-Category&gclid=Cj0KCQjwi7yCBhDJARIsAMWFScMLEMtn_IoTrpbuPJ_RyaaRRqpt71YNyuQlAgTrxT8LnSbGhNzPqwgaAgUVEALw_wcB">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/nBOKStl.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.jagstore.in/search/Trendy%20Stone%20&%20Pearl%20Work%20Jewellery%20Set?gclid=Cj0KCQjwi7yCBhDJARIsAMWFScPRdzT2VYJDLqOp7di1Z1emlOSwDDnvKA21RE3PFKKG8jF3yBqdcWoaAqUcEALw_wcB">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/NcfcHwY.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.ajio.com/zaveri-pearls-mesmerising-kundan--pearl-bridal-choker-necklace-set-zpfk8882/p/460605772_gold">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/ZOPr2N6.jpg">
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/7lX0ijD.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.amazon.in/Cardinal-American-Diamond-Necklace-Bracelet/dp/B01MS2JB8B">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/7FWPKzP.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://studiokonline.com/product/oxidized-silver-tribal-paisley-design-floral-locket-and-earrings-necklace-set-for-women-and-girls/">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/H0VeWDT.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.amazon.in/SUPERSHOP-White-Plating-Partywear-Necklace/dp/B07FDH66VP">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<h2>Palm sets</h2>
+			<hr>
+			<br>
+			<div class="trends">
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/5zr6Hbz.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.amazon.com/Sapphire-Eternity-Sterling-Engagement-Stackable/dp/B081YSPSKR">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/wC3cc5i.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.amazon.in/Sanjog-Designer-Bracelet-Hathphool-Harness/dp/B08KHKJTTY">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/oNJQvDi.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.shopclues.com/gorgeous-crown-design-elements-sterling-silver-adjustable-ring-for-women-and-girls-130502820.html">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/yERo1pO.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.mangalandmangal.com/jewellery/book-n-buy/3347-canny-silver-fancy-ring.html">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/dpEtyfm.jpg">
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/8RL0M8n.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.icing.com/us/rose-gold-frosted-flower-hand-chain---pink-240901.html">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/8Gdz4Lx.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.alibaba.com/product-detail/2015-trendy-antique-jewelry-branch-shape_60279420911.html">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="pic">
+					<div class="items">
+						<img src="https://i.imgur.com/SNrAn7B.jpg">
+						<div class="details">
+							<h3>Details...</h3>
+							<p> <a
+									href="https://www.indiamart.com/proddetail/golden-gold-plated-hath-phool-hand-thong-pearl-bracelet-finger-ring-bracelet-for-women-and-girls-21260637412.html">Link</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<div class="more">
+				<a href="">
+					<h2>Next...</h2>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!----------------------------------------------------------------------content end-------------------------------------------------------------------->
+
+	<!--------------------------------------------------------------------footer----------------------------------------------------------------------->
+	<div class="footer">
+		<div class="pg">
+			<a href="aboutus.html" class="pg1">About Us</a>
+		</div>
+		<div class="pg">
+			<a href="contactus.html" class="pg2">Contact Us</a>
+		</div>
+		<div class="pg">
+			<a href="feedback.html" class="pg3">Feedback</a>
+		</div>
+		<div class="pg">
+			<button class="open-button" onclick="openform()">Chat Window</button>
+		</div>
+		<div class="chat-popup" id="myForm">
+			<form action="" class="form-container">
+				<h2>Chat</h2>
+				<b>Message</b>
+				<textarea placeholder="Type message.." name="msg" required></textarea>
+				<div class="chatbtncontainer">
+					<button type="submit" class="btn">Send</button>
+					<button type="button" class="btn cancel" onclick="closeform()">Close</button>
+				</div>
+			</form>
+		</div>
+		<div class="terms">
+			<a href="">Terms of Service</a>
+			<a href="" class="pp">Privacy policy</a>
+		</div>
+		<br><br>
+		<div class="copyright">
+			<p>Copyright &copy; 2021 - All Rights Reserved - <a href="#">Styling mindset</a></p>
+		</div>
+	</div>
+	<!-------------------------------------------------------------------------footer end----------------------------------------------------------------->
+	<script src="java.js"></script>
+</body>
+
+</html>
